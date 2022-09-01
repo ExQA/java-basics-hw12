@@ -1,12 +1,18 @@
+import java.util.stream.IntStream;
+
 public class StreamTask {
 
     public static int getSumSquareEven(int[] numbers) {
-        // TODO replace return with your code
-        return 0;
+        return IntStream.of(numbers)
+                .filter(n -> n % 2 == 0)
+                .map(k -> k * k)
+                .sum();
     }
 
     public static int[] getSortedOddsArray(int[] numbers) {
-        // TODO replace return with your code
-        return new int[]{};
+        return IntStream.of(numbers)
+                .filter(n -> n % 2 != 0)
+                .sorted()
+                .toArray();
     }
 }
